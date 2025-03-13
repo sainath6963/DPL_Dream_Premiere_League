@@ -1,90 +1,86 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-// import BplLogo from "../../photos/bpl.png";
 
 const Menu = [
   { id: 1, name: "Home", link: "/" },
-  { id: 2, name: "About Us", link: "/AboutUs" },
-  { id: 3, name: "Venue", link: "/Venue" },
-  { id: 4, name: "Teams", link: "/Teams" },
+  { id: 2, name: "About Us", link: "/about-us" },
+  { id: 3, name: "Venue", link: "/venue" },
+  { id: 4, name: "Teams", link: "/teams" },
 ];
 
 const DropDownLinks = [
-  { id: 1, name: "Photos", link: "/" },
-  { id: 2, name: "Register", link: "/Registration" },
+  { id: 1, name: "Photos", link: "/photos" },
+  { id: 2, name: "Register", link: "/registration" },
 ];
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-
-  const handleNavigation = () => {
-    if (location.pathname === "/Registration") {
-      navigate("/");
-    } else {
-      navigate("/Registration");
-    }
-  };
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <div className="shadow-md bg-slate-400">
-      <div className="bg-black py-3 sm:py-0">
-        <div className="container mx-auto flex items-center justify-between px-[40px]">
-          <div>
-            <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
-              {/* <img src={BplLogo} className="h-20" alt="BPL Logo" /> */}
-            </a>
-          </div>
-          <div className="flex justify-between items-center gap-3">
-            <button
-              onClick={handleNavigation}
-              type="button"
-              className="w-full mt-2 bg-orange-600 text-white p-2 rounded-md hover:bg-green-500"
-            >
-              {location.pathname === "/Registration"
-                ? "Go Home"
-                : "Registration Page"}
-            </button>
-          </div>
+    <nav className="shadow-md bg-gray-800 text-white">
+      <div className="container mx-auto flex items-center justify-between px-6 py-4">
+        {/* Logo */}
+        <div
+          className="text-2xl font-bold cursor-pointer"
+          onClick={() => navigate("/")}
+        >
+          BPL
         </div>
-      </div>
-      <div className="flex justify-center">
-        <ul className="sm:flex hidden items-center gap-4">
-          {Menu.map((data) => (
-            <li key={data.id}>
-              <a
-                href={data.link}
-                className="inline-block px-4 hover:text-white duration-200"
+
+        {/* Navigation Links */}
+        <ul className="hidden md:flex items-center gap-6">
+          {Menu.map((item) => (
+            <li key={item.id}>
+              <button
+                onClick={() => navigate(item.link)}
+                className={`px-4 py-2 hover:text-yellow-400 ${
+                  location.pathname === item.link
+                    ? "text-yellow-400 font-semibold"
+                    : ""
+                }`}
               >
-                {data.name}
-              </a>
+                {item.name}
+              </button>
             </li>
           ))}
-          <li className="group relative cursor-pointer">
-            <a
-              href="#"
-              className="flex items-center gap-[2px] py-2 hover:text-white duration-200"
-            >
-              More
-            </a>
-            <div className="absolute z-[9999] hidden group-hover:block w-[150px] rounded-md bg-blue-200 p-2 text-black">
-              <ul>
-                {DropDownLinks.map((data) => (
-                  <li key={data.id}>
-                    <a
-                      href={data.link}
-                      className="inline-block w-full rounded-md p-2 bg-amber-100 hover:bg-amber-500"
-                    >
-                      {data.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+
+          {/* Dropdown Menu */}
+          <li
+            className="relative cursor-pointer"
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}
+          >
+            <button className="px-4 py-2 hover:text-yellow-400">More</button>
+            {dropdownOpen && (
+              <div className="absolute left-0 top-10 bg-white text-black shadow-lg rounded-md w-40">
+                <ul>
+                  {DropDownLinks.map((link) => (
+                    <li key={link.id}>
+                      <button
+                        onClick={() => navigate(link.link)}
+                        className="block w-full px-4 py-2 hover:bg-gray-200"
+                      >
+                        {link.name}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </li>
         </ul>
+
+        {/* Registration Button */}
+        <button
+          onClick={() => navigate("/registration")}
+          className="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-md text-black font-semibold"
+        >
+          Register
+        </button>
       </div>
-    </div>
+    </nav>
   );
 };
 
