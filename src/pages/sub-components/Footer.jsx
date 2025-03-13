@@ -34,6 +34,10 @@ const FooterLinks = [
     title: "Blog",
     link: "/#blog",
   },
+  {
+    title: "Register",
+    link: "/register",
+  },
 ];
 
 const Footer = () => {
@@ -45,7 +49,7 @@ const Footer = () => {
           <div className="py-8 px-4">
             <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3">
               <img src={""} alt="" className="max-w-[50px]" />
-              SB
+              DPL
             </h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum in
@@ -72,23 +76,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div>
-              <div className="py-8 px-4">
-                <h1 className="sm:text-xl text-xl font-bold sm:text-left text-justify mb-3">
-                  Links
-                </h1>
-                <ul className="flex flex-col gap-3">
-                  {FooterLinks.map((link) => (
-                    <li
-                      className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-gray-200"
-                      key={link.title}
-                    >
-                      <span>{link.title}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            <div></div>
 
             {/* social links */}
 
@@ -107,7 +95,7 @@ const Footer = () => {
               <div className="mt-6">
                 <div className="flex items-center gap-4">
                   <FaLocationArrow />
-                  <p>Chakan Maharashtra</p>
+                  <p>PUNE</p>
                 </div>
                 <div className="flex items-center gap-3 mt-3">
                   <FaMobileAlt />

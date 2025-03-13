@@ -51,10 +51,10 @@ const Tournament = () => {
         {/* header section */}
         <div className=" text-center mb-10 max-w-[700px]  mx-auto">
           <p data-aos="fade-up" className="text-amber-600 text-primary">
-            Top Selling Products For You
+            Tournament
           </p>
           <h1 data-aos="fade-up" className="text-3xl font-bold">
-            Products
+            Tournament
           </h1>
           <p data-aos="fade-up" className="text-xs text-gray-400">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa,
@@ -93,14 +93,7 @@ const Tournament = () => {
           </div>
           {/* view all button */}
         </div>
-        <div className="flex justify-center">
-          <button
-            data-aos="fade-up"
-            className="text-center mt-10 cursor-pointer bg-amber-500 text-white py-1 px-5 rounded-md"
-          >
-            View All{" "}
-          </button>
-        </div>
+        <div className="flex justify-center"></div>
       </div>
     </div>
   );
