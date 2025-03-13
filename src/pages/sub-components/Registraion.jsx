@@ -31,7 +31,7 @@ const Registration = () => {
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-500 to-green-400 p-4">
       <div className="bg-white p-8 rounded-lg shadow-2xl w-full max-w-md">
         <h2 className="text-3xl font-bold text-center text-blue-600 mb-6">
-          BPL Match Registration
+          DPL Match Registration
         </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="flex items-center border rounded-md p-2">
