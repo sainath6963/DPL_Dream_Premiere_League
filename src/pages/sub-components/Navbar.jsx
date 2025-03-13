@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import BplLogo from "../../../public/bpl.png";
+import BplLogo from "../../photos/bpl.png";
 
 const Menu = [
   { id: 1, name: "Home", link: "/" },
