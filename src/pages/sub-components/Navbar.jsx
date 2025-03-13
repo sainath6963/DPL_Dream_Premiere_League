@@ -18,6 +18,11 @@ const Navbar = () => {
   const location = useLocation();
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
+  const handleNavigation = (link) => {
+    setDropdownOpen(false); // Close dropdown before navigating
+    setTimeout(() => navigate(link), 150); // Delay to ensure smooth transition
+  };
+
   return (
     <nav className="shadow-md bg-gray-800 text-white">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
@@ -34,7 +39,7 @@ const Navbar = () => {
           {Menu.map((item) => (
             <li key={item.id}>
               <button
-                onClick={() => navigate(item.link)}
+                onClick={() => handleNavigation(item.link)}
                 className={`px-4 py-2 hover:text-yellow-400 ${
                   location.pathname === item.link
                     ? "text-yellow-400 font-semibold"
@@ -48,27 +53,29 @@ const Navbar = () => {
 
           {/* Dropdown Menu */}
           <li
-            className="relative cursor-pointer"
+            className="relative"
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
           >
             <button className="px-4 py-2 hover:text-yellow-400">More</button>
-            {dropdownOpen && (
-              <div className="absolute left-0 top-10 bg-white text-black shadow-lg rounded-md w-40">
-                <ul>
-                  {DropDownLinks.map((link) => (
-                    <li key={link.id}>
-                      <button
-                        onClick={() => navigate(link.link)}
-                        className="block w-full px-4 py-2 hover:bg-gray-200"
-                      >
-                        {link.name}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+            <div
+              className={`absolute left-0 top-10 bg-white text-black shadow-lg rounded-md w-40 z-50 transition-all duration-200 ${
+                dropdownOpen ? "block" : "hidden"
+              }`}
+            >
+              <ul>
+                {DropDownLinks.map((link) => (
+                  <li key={link.id}>
+                    <button
+                      onClick={() => handleNavigation(link.link)}
+                      className="block w-full px-4 py-2 hover:bg-gray-200"
+                    >
+                      {link.name}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </li>
         </ul>
 
