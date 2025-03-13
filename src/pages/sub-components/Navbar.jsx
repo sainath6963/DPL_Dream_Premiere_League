@@ -20,7 +20,7 @@ const Navbar = () => {
 
   const handleNavigation = (link) => {
     setDropdownOpen(false); // Close dropdown before navigating
-    setTimeout(() => navigate(link), 150); // Delay to ensure smooth transition
+    setTimeout(() => navigate(link), 150); // Delay ensures smooth transition
   };
 
   return (
@@ -31,7 +31,7 @@ const Navbar = () => {
           className="text-2xl font-bold cursor-pointer"
           onClick={() => navigate("/")}
         >
-          BPL
+          DPL
         </div>
 
         {/* Navigation Links */}
@@ -79,12 +79,16 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* Registration Button */}
+        {/* Dynamic Registration Button */}
         <button
-          onClick={() => navigate("/registration")}
+          onClick={() =>
+            navigate(
+              location.pathname === "/registration" ? "/" : "/registration"
+            )
+          }
           className="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-md text-black font-semibold"
         >
-          Register
+          {location.pathname === "/registration" ? "Home" : "Register"}
         </button>
       </div>
     </nav>
