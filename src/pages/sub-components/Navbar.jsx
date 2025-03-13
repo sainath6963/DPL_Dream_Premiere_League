@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import BplLogo from "../../photos/bpl.png";
+// import BplLogo from "../../photos/bpl.png";
 
 const Menu = [
   { id: 1, name: "Home", link: "/" },
@@ -32,7 +32,7 @@ const Navbar = () => {
         <div className="container mx-auto flex items-center justify-between px-[40px]">
           <div>
             <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
-              <img src={BplLogo} className="h-20" alt="BPL Logo" />
+              {/* <img src={BplLogo} className="h-20" alt="BPL Logo" /> */}
             </a>
           </div>
           <div className="flex justify-between items-center gap-3">
