@@ -3,9 +3,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 const Menu = [
   { id: 1, name: "Home", link: "/" },
-  { id: 2, name: "About Us", link: "/about-us" },
+  { id: 2, name: "About Us", link: "/about_us" },
   { id: 3, name: "Venue", link: "/venue" },
-  { id: 4, name: "Teams", link: "/teams" },
 ];
 
 const DropDownLinks = [

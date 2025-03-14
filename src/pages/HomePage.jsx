@@ -85,42 +85,7 @@ function HomePage() {
                   <PencilRuler className="h-5 w-5" />
                   Venue
                 </Link>
-                <Link
-                  href="#"
-                  className={`flex items-center gap-4 px-2.5 ${
-                    active === "AddApplication"
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  } `}
-                  onClick={() => setActive("AddApplication")}
-                >
-                  <LayoutGrid className="h-5 w-5" />
-                  AddApplication
-                </Link>
-                <Link
-                  href="#"
-                  className={`flex items-center gap-4 px-2.5 ${
-                    active === "Account"
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  } `}
-                  onClick={() => setActive("Account")}
-                >
-                  <User className="h-5 w-5" />
-                  Account
-                </Link>
-                <Link
-                  href="#"
-                  className={`flex items-center gap-4 px-2.5 ${
-                    active === "AddTimeline"
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  } `}
-                  onClick={() => setActive("AddTimeline")}
-                >
-                  <History className="h-5 w-5" />
-                  AddTimeline
-                </Link>
+
                 <Link
                   href="#"
                   className={`flex items-center gap-4 px-2.5 ${
@@ -148,15 +113,7 @@ function HomePage() {
             case "Venue":
               return <Venue />;
               break;
-            case "AddApplication":
-              return <AddApplication />;
-              break;
-            case "AddTimeline":
-              return <AddTimeline />;
-              break;
-            case "Messages":
-              return <Messages />;
-              break;
+
             case "Registration":
               return <Registraion />;
               break;

@@ -1,5 +1,5 @@
 import React from "react";
-import Banner from "../../photos/footer-pattern.jpg";
+import { motion } from "framer-motion";
 import {
   FaFacebook,
   FaInstagram,
@@ -7,106 +7,96 @@ import {
   FaLocationArrow,
   FaMobileAlt,
 } from "react-icons/fa";
-
-const BannerImg = {
-  backgroundImage: `url(${Banner})`,
-  backgroundPosition: "bottom",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "cover",
-  height: "100%",
-  width: "100%",
-};
+import Banner from "../../photos/footer-pattern.jpg";
 
 const FooterLinks = [
-  {
-    title: "Home",
-    link: "/#",
-  },
-  {
-    title: "About",
-    link: "/#about",
-  },
-  {
-    title: "Contact",
-    link: "/#contact",
-  },
-  {
-    title: "Blog",
-    link: "/#blog",
-  },
-  {
-    title: "Register",
-    link: "/register",
-  },
+  { title: "Home", link: "/" },
+  { title: "About", link: "/about_us" },
+  { title: "Venue", link: "/Venue" },
+  { title: "Register", link: "/register" },
 ];
 
 const Footer = () => {
   return (
-    <div style={BannerImg} className="text-white">
-      <div className="container">
-        <div data-aos="zoom-in" className="grid md:grid-cols-3 pb-44 pt-5">
-          {/* company details */}
-          <div className="py-8 px-4">
-            <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3">
-              <img src={""} alt="" className="max-w-[50px]" />
-              DPL
-            </h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum in
-              beatae ea recusandae blanditiis veritatis.
-            </p>
+    <footer
+      className="text-white bg-cover bg-center py-12"
+      style={{ backgroundImage: `url(${Banner})` }}
+    >
+      <div className="container mx-auto px-6 md:px-12 grid md:grid-cols-3 gap-10">
+        {/* Company Details */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col items-start"
+        >
+          <h1 className="text-3xl font-bold flex items-center gap-3">
+            <img src={""} className="max-w-[50px]" /> DPL
+          </h1>
+          <p className="mt-3 text-gray-300 max-w-sm">
+            Experience the thrill of the DPL Cricket Tournament, where talent
+            meets passion on the grandest stage.
+          </p>
+        </motion.div>
+
+        {/* Footer Links */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-xl font-semibold mb-3">Quick Links</h2>
+          <ul className="flex flex-col gap-2">
+            {FooterLinks.map((link) => (
+              <li
+                key={link.title}
+                className="cursor-pointer hover:text-yellow-400 transition-transform transform hover:translate-x-2"
+              >
+                {link.title}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        {/* Social Links & Contact */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-xl font-semibold mb-3">Connect With Us</h2>
+          <div className="flex gap-4 text-2xl">
+            <a href="#" className="hover:text-yellow-400 transition">
+              <FaInstagram />
+            </a>
+            <a href="#" className="hover:text-yellow-400 transition">
+              <FaFacebook />
+            </a>
+            <a href="#" className="hover:text-yellow-400 transition">
+              <FaLinkedin />
+            </a>
           </div>
-
-          {/* Footer Links */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 col-span-2 md:pl-10">
-            <div>
-              <div className="py-8 px-10">
-                <h1 className="sm:text-xl text-xl font-bold sm:text-left text-justify mb-3">
-                  Important Links
-                </h1>
-                <ul className="flex flex-col gap-3">
-                  {FooterLinks.map((link) => (
-                    <li
-                      className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-gray-200"
-                      key={link.title}
-                    >
-                      <span>{link.title}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <div className="mt-4 text-gray-300">
+            <div className="flex items-center gap-2">
+              <FaLocationArrow /> <span>Pune, India</span>
             </div>
-            <div></div>
-
-            {/* social links */}
-
-            <div>
-              <div className="flex items-center gap-4 mt-6">
-                <a href="#">
-                  <FaInstagram className="text-3xl" />
-                </a>
-                <a href="#">
-                  <FaFacebook className="text-3xl" />
-                </a>
-                <a href="#">
-                  <FaLinkedin className="text-3xl" />
-                </a>
-              </div>
-              <div className="mt-6">
-                <div className="flex items-center gap-4">
-                  <FaLocationArrow />
-                  <p>PUNE</p>
-                </div>
-                <div className="flex items-center gap-3 mt-3">
-                  <FaMobileAlt />
-                  <p>+91 123456789</p>
-                </div>
-              </div>
+            <div className="flex items-center gap-2 mt-2">
+              <FaMobileAlt /> <span>+91 123456789</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="text-center text-gray-400 text-sm mt-8"
+      >
+        © {new Date().getFullYear()} DPL Cricket Tournament & SB9Codes Pvt Ltd.
+        All rights reserved.
+      </motion.div>
+    </footer>
   );
 };
 

@@ -108,9 +108,6 @@ const Dashboard = ({ handleOrderPopup }) => {
       <div className="mt-4">
         <Testimonials />
       </div>
-      <div className="mt-4">
-        <Footer />
-      </div>
     </>
   );
 };

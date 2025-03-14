@@ -15,6 +15,9 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import AboutUs from "./pages/sub-components/AboutUS";
+import Footer from "./pages/sub-components/Footer";
+import Venue from "./pages/sub-components/Venue";
 
 const App = () => {
   useEffect(() => {
@@ -34,9 +37,12 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/tournament" element={<Tournament />} />
+        <Route path="/about_us" element={<AboutUs />} />
+        <Route path="/venue" element={<Venue />} />
         <Route path="/registration" element={<Registration />} />
       </Routes>
       <ToastContainer position="bottom-right" theme="dark" />
+      <Footer />
     </Router>
   );
 };
