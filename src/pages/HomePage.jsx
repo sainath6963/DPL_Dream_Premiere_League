@@ -1,27 +1,19 @@
 import { Button } from "@/components/ui/button";
 import {
   FolderGit,
-  History,
   Home,
-  LayoutGrid,
-  LogOut,
   MessageSquareMore,
-  Package,
   Package2,
-  PanelLeft,
   PencilRuler,
-  User,
 } from "lucide-react";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+
 import { PanelLeftOpen } from "lucide-react";
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Dashboard from "./sub-components/Dashboard.jsx";
-
-import Messages from "./sub-components/Messages.jsx";
 
 import Registraion from "./sub-components/Registraion.jsx";
 import AboutUS from "./sub-components/AboutUS.jsx";

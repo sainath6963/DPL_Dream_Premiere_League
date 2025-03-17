@@ -1,8 +1,6 @@
 import React from "react";
 import banner from "../../photos/DPL7.jpg";
-import { GrSecure } from "react-icons/gr";
-import { IoFastFood } from "react-icons/io5";
-import { GiFoodTruck } from "react-icons/gi";
+
 import { MdLocalOffer } from "react-icons/md";
 
 const Banner = () => {

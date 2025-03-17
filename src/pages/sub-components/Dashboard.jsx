@@ -6,7 +6,6 @@ import cricket3 from "../../photos/cricket3.png";
 import Tournament from "./Tournament";
 import Banner from "./Banner";
 import Testimonials from "./Testimonials";
-import Footer from "./Footer";
 
 const ImageList = [
   {
@@ -32,7 +31,7 @@ const ImageList = [
   },
 ];
 
-const Dashboard = ({ handleOrderPopup }) => {
+const Dashboard = () => {
   var settings = {
     dots: false,
     arrows: false,
