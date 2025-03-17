@@ -1,5 +1,7 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import logo from "../../photos/DPL.png";
 import {
   FaFacebook,
   FaInstagram,
@@ -7,16 +9,18 @@ import {
   FaLocationArrow,
   FaMobileAlt,
 } from "react-icons/fa";
-import Banner from "../../photos/footer-pattern.jpg";
+import Banner from "../../photos/footer3.jpg";
 
 const FooterLinks = [
   { title: "Home", link: "/" },
   { title: "About", link: "/about_us" },
-  { title: "Venue", link: "/Venue" },
-  { title: "Register", link: "/register" },
+  { title: "Venue", link: "/venue" },
+  { title: "Register", link: "/registration" },
 ];
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <footer
       className="text-white bg-cover bg-center py-12"
@@ -31,9 +35,13 @@ const Footer = () => {
           className="flex flex-col items-start"
         >
           <h1 className="text-3xl font-bold flex items-center gap-3">
-            <img src={""} className="max-w-[50px]" /> DPL
+            <img
+              src={logo}
+              alt="DPL Logo"
+              className="h-14 w-18 rounded-xl mr-3 border-2 border-black"
+            />
           </h1>
-          <p className="mt-3 text-gray-300 max-w-sm">
+          <p className="mt-3 text-gray-50 max-w-sm">
             Experience the thrill of the DPL Cricket Tournament, where talent
             meets passion on the grandest stage.
           </p>
@@ -50,6 +58,7 @@ const Footer = () => {
             {FooterLinks.map((link) => (
               <li
                 key={link.title}
+                onClick={() => navigate(link.link)}
                 className="cursor-pointer hover:text-yellow-400 transition-transform transform hover:translate-x-2"
               >
                 {link.title}
@@ -76,12 +85,12 @@ const Footer = () => {
               <FaLinkedin />
             </a>
           </div>
-          <div className="mt-4 text-gray-300">
+          <div className="mt-4 text-gray-50">
             <div className="flex items-center gap-2">
-              <FaLocationArrow /> <span>Pune, India</span>
+              <FaLocationArrow /> <span>Butibori, Nagpur</span>
             </div>
             <div className="flex items-center gap-2 mt-2">
-              <FaMobileAlt /> <span>+91 123456789</span>
+              <FaMobileAlt /> <span>+91 8698108101</span>
             </div>
           </div>
         </motion.div>
@@ -91,7 +100,7 @@ const Footer = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="text-center text-gray-400 text-sm mt-8"
+        className="text-center text-gray-50 text-sm mt-8"
       >
         © {new Date().getFullYear()} DPL Cricket Tournament & SB9Codes Pvt Ltd.
         All rights reserved.

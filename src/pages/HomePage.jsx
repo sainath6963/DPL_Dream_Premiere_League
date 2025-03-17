@@ -26,6 +26,8 @@ import Messages from "./sub-components/Messages.jsx";
 import Registraion from "./sub-components/Registraion.jsx";
 import AboutUS from "./sub-components/AboutUS.jsx";
 import Venue from "./sub-components/Venue.jsx";
+import Rules from "../pages/sub-components/Rules.jsx";
+import PrizeAward from "../pages/sub-components/PrizeAwards.jsx";
 
 function HomePage() {
   const [active, setActive] = useState("Dashboard");
@@ -34,7 +36,7 @@ function HomePage() {
 
   return (
     <>
-      <div className="flex min-h-screen w-full flex-col bg-muted/40">
+      <div className="flex min-h-screen w-full flex-col bg-gray-100 text-black p-4">
         <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6 max-[900px]">
           <Sheet>
             <SheetTrigger asChild>
@@ -85,6 +87,30 @@ function HomePage() {
                   <PencilRuler className="h-5 w-5" />
                   Venue
                 </Link>
+                <Link
+                  href="#"
+                  className={`flex items-center gap-4 px-2.5 ${
+                    active === "AddProject"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  } `}
+                  onClick={() => setActive("Rules & Regulations")}
+                >
+                  <FolderGit className="h-5 w-5" />
+                  Rules & Regulations
+                </Link>
+                <Link
+                  href="#"
+                  className={`flex items-center gap-4 px-2.5 ${
+                    active === "AddProject"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  } `}
+                  onClick={() => setActive("Prizes")}
+                >
+                  <FolderGit className="h-5 w-5" />
+                  Prizes
+                </Link>
 
                 <Link
                   href="#"
@@ -112,6 +138,12 @@ function HomePage() {
               break;
             case "Venue":
               return <Venue />;
+              break;
+            case "Rules & Regulations":
+              return <Rules />;
+              break;
+            case "Prizes":
+              return <PrizeAward />;
               break;
 
             case "Registration":

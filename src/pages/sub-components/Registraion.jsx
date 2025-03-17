@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaUser, FaEnvelope, FaPhone, FaUsers } from "react-icons/fa";
+import { FaUser, FaEnvelope, FaPhone, FaBirthdayCake } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import {
   registerUser,
-  clearAllErrors, // ✅ Corrected function name
-  resetRegisterState, // ✅ Corrected function name
+  clearAllErrors,
+  resetRegisterState,
 } from "../../store/slices/RegisterSlice.js";
 
 const Registration = () => {
@@ -17,7 +17,8 @@ const Registration = () => {
     name: "",
     email: "",
     phone: "",
-    teamName: "",
+    age: "", // Added age field
+    playerRole: "Batsman",
   });
 
   const handleChange = (e) => {
@@ -34,16 +35,22 @@ const Registration = () => {
   useEffect(() => {
     if (error) {
       toast.error(error);
-      dispatch(clearAllErrors()); // ✅ Use the correct action
+      dispatch(clearAllErrors());
     }
     if (message) {
-      dispatch(resetRegisterState()); // ✅ Use the correct action
-      setFormData({ name: "", email: "", phone: "", teamName: "" });
+      dispatch(resetRegisterState());
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        age: "",
+        playerRole: "Batsman",
+      });
     }
   }, [dispatch, error, message]);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-500 to-purple-600 p-6">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-700 to-purple-400 p-6">
       <motion.div
         className="bg-white p-10 rounded-xl shadow-2xl w-full max-w-lg"
         initial={{ opacity: 0, y: -30 }}
@@ -73,7 +80,13 @@ const Registration = () => {
               icon: <FaPhone />,
               type: "tel",
             },
-            { name: "teamName", placeholder: "Team Name", icon: <FaUsers /> },
+            {
+              name: "age",
+              placeholder: "Age",
+              icon: <FaBirthdayCake />,
+              type: "number",
+              min: 16,
+            },
           ].map((field) => (
             <motion.div
               key={field.name}
@@ -91,9 +104,30 @@ const Registration = () => {
                 onChange={handleChange}
                 className="w-full bg-transparent outline-none text-gray-700"
                 required
+                min={field.min || undefined}
               />
             </motion.div>
           ))}
+
+          {/* Dropdown for Player Role */}
+          <motion.div
+            className="flex items-center border rounded-lg p-3 shadow-sm bg-gray-100"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <select
+              name="playerRole"
+              value={formData.playerRole}
+              onChange={handleChange}
+              className="w-full bg-transparent outline-none text-gray-700"
+            >
+              <option value="Batsman">Batsman</option>
+              <option value="Bowler">Bowler</option>
+              <option value="All-Rounder">All-Rounder</option>
+              <option value="Wicket-Keeper">Wicket-Keeper</option>
+            </select>
+          </motion.div>
 
           <motion.button
             type="submit"

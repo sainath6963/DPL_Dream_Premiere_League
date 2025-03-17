@@ -18,6 +18,8 @@ import "slick-carousel/slick/slick-theme.css";
 import AboutUs from "./pages/sub-components/AboutUS";
 import Footer from "./pages/sub-components/Footer";
 import Venue from "./pages/sub-components/Venue";
+import Rule from "./pages/sub-components/Rules";
+import PrizeAwards from "./pages/sub-components/PrizeAwards";
 
 const App = () => {
   useEffect(() => {
@@ -40,6 +42,8 @@ const App = () => {
         <Route path="/about_us" element={<AboutUs />} />
         <Route path="/venue" element={<Venue />} />
         <Route path="/registration" element={<Registration />} />
+        <Route path="/Rules" element={<Rule />} />
+        <Route path="/PriceMoney" element={<PrizeAwards />} />
       </Routes>
       <ToastContainer position="bottom-right" theme="dark" />
       <Footer />

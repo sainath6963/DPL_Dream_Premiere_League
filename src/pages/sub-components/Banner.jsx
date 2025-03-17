@@ -1,5 +1,5 @@
 import React from "react";
-// import banner from "../../assets/image1.png";
+import banner from "../../photos/DPL7.jpg";
 import { GrSecure } from "react-icons/gr";
 import { IoFastFood } from "react-icons/io5";
 import { GiFoodTruck } from "react-icons/gi";
@@ -13,7 +13,7 @@ const Banner = () => {
           {/* image section */}
           <div data-aos="zoom-in">
             <img
-              //   src={banner}
+              src={banner}
               alt=""
               className=" bg-gray-800 rounded-sm max-w-[500px] h-[350px] w-full mx-auto drop-shadow-[0_20px_30px_rgba(0,0,0,1)] object-cover]"
             />
@@ -21,7 +21,7 @@ const Banner = () => {
           {/* text details */}
           <div className="flex flex-col justify-center gap-6 sm:pt-0">
             <h1 data-aos="fade-up" className="text-3xl sm:text-4xl font-bold">
-              What We Offer
+              Tournament Highlights & Structure
             </h1>
             <p
               data-aos="fade-up"
@@ -33,29 +33,39 @@ const Banner = () => {
             </p>
             <div className="flex flex-col gap-4">
               <div data-aos="fade-up" className="flex item-center gap-4">
-                <GrSecure className="text-4xl h-12 w-12 shadow-sm p-4 rounded-full bg-orange-100 " />
+                <MdLocalOffer className="text-4xl h-12 w-12 shadow-sm p-4 rounded-full bg-orange-100 " />
                 <p className="hover:scale-105 duration-300 py-2.5">
-                  Thrilling Matches – Witness high-intensity games with top
-                  teams.
-                </p>
-              </div>
-              <div data-aos="fade-up" className="flex item-center gap-4">
-                <IoFastFood className="text-4xl h-12 w-12 shadow-sm p-4 rounded-full bg-orange-100 " />
-                <p className="hover:scale-105 duration-300 py-2.5">
-                  Exciting Tournaments – Participate in and follow major cricket
-                  events.
-                </p>
-              </div>
-              <div data-aos="fade-up" className="flex item-center gap-4">
-                <GiFoodTruck className="text-4xl h-12 w-12 shadow-sm p-4 rounded-full bg-orange-100 " />
-                <p className="hover:scale-105 duration-300 py-2.5">
-                  Top-Class Venues – Enjoy the game on Awsome Ground.
+                  Franchise Teams – Competing for glory & massive cash prizes
                 </p>
               </div>
               <div data-aos="fade-up" className="flex item-center gap-4">
                 <MdLocalOffer className="text-4xl h-12 w-12 shadow-sm p-4 rounded-full bg-orange-100 " />
                 <p className="hover:scale-105 duration-300 py-2.5">
-                  Community Engagement – Connect with cricket lovers and teams.
+                  Live Broadcast – Matches will be streamed nationwide
+                </p>
+              </div>
+              <div data-aos="fade-up" className="flex item-center gap-4">
+                <MdLocalOffer className="text-4xl h-12 w-12 shadow-sm p-4 rounded-full bg-orange-100 " />
+                <p className="hover:scale-105 duration-300 py-2.5">
+                  Grand Cultural Nights – Entertainment every night
+                </p>
+              </div>
+              <div data-aos="fade-up" className="flex item-center gap-4">
+                <MdLocalOffer className="text-4xl h-12 w-12 shadow-sm p-4 rounded-full bg-orange-100 " />
+                <p className="hover:scale-105 duration-300 py-2.5">
+                  Premium Inauguration & Closing Ceremonies.
+                </p>
+              </div>
+              <div data-aos="fade-up" className="flex item-center gap-4">
+                <MdLocalOffer className="text-4xl h-12 w-12 shadow-sm p-4 rounded-full bg-orange-100 " />
+                <p className="hover:scale-105 duration-300 py-2.5">
+                  VIP Guests & Celebrity Appearances
+                </p>
+              </div>
+              <div data-aos="fade-up" className="flex item-center gap-4">
+                <MdLocalOffer className="text-4xl h-12 w-12 shadow-sm p-4 rounded-full bg-orange-100 " />
+                <p className="hover:scale-105 duration-300 py-2.5">
+                  Tournament Dates: June 5 – June 10, 2025
                 </p>
               </div>
             </div>

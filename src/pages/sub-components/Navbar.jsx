@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import logo from "../../photos/DPL.png";
 
 const Menu = [
   { id: 1, name: "Home", link: "/" },
@@ -8,8 +9,10 @@ const Menu = [
 ];
 
 const DropDownLinks = [
-  { id: 1, name: "Photos", link: "/photos" },
-  { id: 2, name: "Register", link: "/registration" },
+  { id: 1, name: "Rules And Regulations", link: "/Rules" },
+  { id: 2, name: "Prizes", link: "/PriceMoney" },
+  { id: 3, name: "Photos", link: "/photos" },
+  { id: 4, name: "Register", link: "/registration" },
 ];
 
 const Navbar = () => {
@@ -25,12 +28,15 @@ const Navbar = () => {
   return (
     <nav className="shadow-md bg-gray-800 text-white">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
-        {/* Logo */}
         <div
-          className="text-2xl font-bold cursor-pointer"
+          className="flex items-center cursor-pointer"
           onClick={() => navigate("/")}
         >
-          DPL
+          <img
+            src={logo}
+            alt="DPL Logo"
+            className="h-14 w-18 rounded-xl mr-3 border-2 border-black"
+          />
         </div>
 
         {/* Navigation Links */}
@@ -58,7 +64,7 @@ const Navbar = () => {
           >
             <button className="px-4 py-2 hover:text-yellow-400">More</button>
             <div
-              className={`absolute left-0 top-10 bg-white text-black shadow-lg rounded-md w-40 z-50 transition-all duration-200 ${
+              className={`absolute left-0 top-10 bg-stone-600 text-white shadow-lg rounded-md w-40 z-50 transition-all duration-200 ${
                 dropdownOpen ? "block" : "hidden"
               }`}
             >
@@ -67,7 +73,7 @@ const Navbar = () => {
                   <li key={link.id}>
                     <button
                       onClick={() => handleNavigation(link.link)}
-                      className="block w-full px-4 py-2 hover:bg-gray-200"
+                      className="block w-full px-4 py-2 hover:bg-orange-500"
                     >
                       {link.name}
                     </button>
