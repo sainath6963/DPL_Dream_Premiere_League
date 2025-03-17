@@ -11,7 +11,7 @@ const Menu = [
 const DropDownLinks = [
   { id: 1, name: "Rules And Regulations", link: "/Rules" },
   { id: 2, name: "Prizes", link: "/PriceMoney" },
-  { id: 3, name: "Photos", link: "/photos" },
+
   { id: 4, name: "Register", link: "/registration" },
 ];
 

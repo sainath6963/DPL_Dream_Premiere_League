@@ -63,7 +63,7 @@ const Registration = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          DPL Match Registration
+          DPL Player Registration
         </motion.h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           {[
