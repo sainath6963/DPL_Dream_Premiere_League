@@ -8,6 +8,7 @@ import {
   FaLinkedin,
   FaLocationArrow,
   FaMobileAlt,
+  FaYoutube,
 } from "react-icons/fa";
 import Banner from "../../photos/footer3.jpg";
 
@@ -75,14 +76,23 @@ const Footer = () => {
         >
           <h2 className="text-xl font-semibold mb-3">Connect With Us</h2>
           <div className="flex gap-4 text-2xl">
-            <a href="#" className="hover:text-yellow-400 transition">
+            <a
+              href="https://www.instagram.com/dpl_butibori/?igsh=dGN6eWpyYW1uYWVw#"
+              className="hover:text-yellow-400 transition"
+            >
               <FaInstagram />
             </a>
-            <a href="#" className="hover:text-yellow-400 transition">
+            <a
+              href="https://www.facebook.com/share/1F6opoFhSK/?mibextid=wwXIfr"
+              className="hover:text-yellow-400 transition"
+            >
               <FaFacebook />
             </a>
-            <a href="#" className="hover:text-yellow-400 transition">
-              <FaLinkedin />
+            <a
+              href="https://www.youtube.com/@DPLButibori"
+              className="hover:text-yellow-400 transition"
+            >
+              <FaYoutube />
             </a>
           </div>
           <div className="mt-4 text-gray-50">
