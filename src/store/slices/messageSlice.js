@@ -7,7 +7,7 @@ export const fetchMessages = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/v1/message/getAllMessage"
+        "https://dpl-backend-kuxw.onrender.com/api/v1/message/getAllMessage"
       );
       return response.data;
     } catch (error) {
