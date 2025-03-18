@@ -10,8 +10,7 @@ const Menu = [
 
 const DropDownLinks = [
   { id: 1, name: "Rules And Regulations", link: "/Rules" },
-  { id: 2, name: "Prizes", link: "/PriceMoney" },
-
+  { id: 2, name: "Prizes", link: "/prize-money" },
   { id: 4, name: "Register", link: "/registration" },
 ];
 
@@ -84,17 +83,25 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* Dynamic Registration Button */}
-        <button
-          onClick={() =>
-            navigate(
-              location.pathname === "/registration" ? "/" : "/registration"
-            )
-          }
-          className="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-md text-black font-semibold"
-        >
-          {location.pathname === "/registration" ? "Home" : "Register"}
-        </button>
+        {/* Dynamic Registration & Admin Button */}
+        <div className="flex gap-4">
+          <button
+            onClick={() =>
+              navigate(
+                location.pathname === "/registration" ? "/" : "/registration"
+              )
+            }
+            className="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-md text-black font-semibold"
+          >
+            {location.pathname === "/registration" ? "Home" : "Register"}
+          </button>
+          <button
+            onClick={() => navigate("/admin/login")} // Navigates to Admin Dashboard
+            className="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-md text-black font-semibold"
+          >
+            Admin
+          </button>
+        </div>
       </div>
     </nav>
   );

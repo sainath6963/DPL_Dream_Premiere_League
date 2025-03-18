@@ -20,6 +20,12 @@ import Footer from "./pages/sub-components/Footer";
 import Venue from "./pages/sub-components/Venue";
 import Rule from "./pages/sub-components/Rules";
 import PrizeAwards from "./pages/sub-components/PrizeAwards";
+import AdminLogin from "./pages/sub-components/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+import Batman from "./pages/sub-components/Batman";
+import Bawler from "./pages/sub-components/Bawler";
+import AllRounder from "./pages/sub-components/AllRounder";
+import WicketKeeper from "./pages/sub-components/WicketKeeper";
 
 const App = () => {
   useEffect(() => {
@@ -36,15 +42,26 @@ const App = () => {
     <Router>
       <Navbar />
       <Routes>
+        {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/tournament" element={<Tournament />} />
         <Route path="/about_us" element={<AboutUs />} />
         <Route path="/venue" element={<Venue />} />
         <Route path="/registration" element={<Registration />} />
-        <Route path="/Rules" element={<Rule />} />
-        <Route path="/PriceMoney" element={<PrizeAwards />} />
+        <Route path="/rules" element={<Rule />} />
+        <Route path="/prize-money" element={<PrizeAwards />} />
+
+        {/* Admin Routes */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin" element={<AdminDashboard />}>
+          <Route path="batman" element={<Batman />} />
+          <Route path="balwer" element={<Bawler />} />
+          <Route path="AllRounder" element={<AllRounder />} />
+          <Route path="Wicket-Keeper" element={<WicketKeeper />} />
+        </Route>
       </Routes>
+
       <ToastContainer position="bottom-right" theme="dark" />
       <Footer />
     </Router>

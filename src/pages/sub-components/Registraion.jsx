@@ -17,8 +17,8 @@ const Registration = () => {
     name: "",
     email: "",
     phone: "",
-    age: "", // Added age field
-    playerRole: "Batsman",
+    age: "",
+    role: "Batsman", // Ensuring correct initial state
   });
 
   const handleChange = (e) => {
@@ -27,6 +27,7 @@ const Registration = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("Submitting Form Data:", formData); // Debugging role selection
     if (!loading) {
       dispatch(registerUser(formData));
     }
@@ -44,7 +45,7 @@ const Registration = () => {
         email: "",
         phone: "",
         age: "",
-        playerRole: "Batsman",
+        role: "Batsman", // Resetting role properly
       });
     }
   }, [dispatch, error, message]);
@@ -109,7 +110,7 @@ const Registration = () => {
             </motion.div>
           ))}
 
-          {/* Dropdown for Player Role */}
+          {/* Fixed Dropdown for Player Role */}
           <motion.div
             className="flex items-center border rounded-lg p-3 shadow-sm bg-gray-100"
             initial={{ opacity: 0, x: -20 }}
@@ -117,8 +118,8 @@ const Registration = () => {
             transition={{ delay: 0.2 }}
           >
             <select
-              name="playerRole"
-              value={formData.playerRole}
+              name="role" // Fixed name attribute
+              value={formData.role} // Ensuring correct state variable
               onChange={handleChange}
               className="w-full bg-transparent outline-none text-gray-700"
             >
