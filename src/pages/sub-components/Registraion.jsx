@@ -18,6 +18,8 @@ import {
   clearAllErrors,
   resetRegisterState,
 } from "../../store/slices/RegisterSlice.js";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Registration = () => {
   const dispatch = useDispatch();
@@ -32,7 +34,7 @@ const Registration = () => {
     email: "",
     address: "",
     mobile: "",
-    dob: "",
+    dob: new Date(), // Initialize dob as a Date object
     height: "",
     weight: "",
     category: "Batsman",
@@ -48,6 +50,14 @@ const Registration = () => {
     setFormData((prev) => ({
       ...prev,
       [name]: value,
+    }));
+  };
+
+  // ✅ Handle Date Change
+  const handleDateChange = (date) => {
+    setFormData((prev) => ({
+      ...prev,
+      dob: date,
     }));
   };
 
@@ -77,7 +87,7 @@ const Registration = () => {
     e.preventDefault();
     if (!validateForm()) return;
 
-    const formattedDOB = new Date(formData.dob).toISOString();
+    const formattedDOB = formData.dob.toISOString();
 
     // ✅ Prepare Form Data for Submission
     const formDataToSend = {
@@ -112,7 +122,7 @@ const Registration = () => {
         email: "",
         address: "",
         mobile: "",
-        dob: "",
+        dob: new Date(),
         height: "",
         weight: "",
         category: "Batsman",
@@ -177,12 +187,6 @@ const Registration = () => {
               type: "tel",
             },
             {
-              name: "dob",
-              placeholder: "Date of Birth",
-              icon: <FaBirthdayCake />,
-              type: "date",
-            },
-            {
               name: "height",
               placeholder: "Height (cm)",
               icon: <FaRulerVertical />,
@@ -211,6 +215,20 @@ const Registration = () => {
               />
             </motion.div>
           ))}
+
+          {/* Date Picker */}
+          <motion.div className="flex items-center border rounded-lg p-3 shadow-sm bg-gray-100">
+            <span className="text-gray-500 mr-3">
+              <FaBirthdayCake />
+            </span>
+            <DatePicker
+              selected={formData.dob}
+              onChange={handleDateChange}
+              dateFormat="dd-MM-yyyy"
+              className="w-full bg-transparent outline-none text-gray-700"
+              placeholderText="Date of Birth"
+            />
+          </motion.div>
 
           {/* Category Dropdown */}
           <motion.div className="flex items-center border rounded-lg p-3 shadow-sm bg-gray-100">
