@@ -2,14 +2,16 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 // Base URL (update as needed)
-const API_URL = "https://dpl-backend-kuxw.onrender.com/api/v1/user";
-
+const API_URL = import.meta.env.VITE_API;
 // Async Thunks
 export const registerUser = createAsyncThunk(
   "auth/registerUser",
   async (userData, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post(`${API_URL}/register`, userData);
+      const { data } = await axios.post(
+        `${API_URL}/api/v1/user/register`,
+        userData
+      );
       return data;
     } catch (error) {
       return rejectWithValue(
@@ -23,7 +25,10 @@ export const loginUser = createAsyncThunk(
   "auth/loginUser",
   async (credentials, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post(`${API_URL}/login`, credentials);
+      const { data } = await axios.post(
+        `${API_URL}/api/v1/user/login`,
+        credentials
+      );
       localStorage.setItem("userInfo", JSON.stringify(data.user));
       return data;
     } catch (error) {

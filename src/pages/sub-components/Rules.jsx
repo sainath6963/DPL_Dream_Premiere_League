@@ -2,13 +2,27 @@ import { motion } from "framer-motion";
 
 const RulesRegulations = () => {
   const rules = [
-    "Only franchise-owned teams can participate in the DPL.",
-    "Every franchise must select at least 4 local talented players in the auction.",
-    "Each team can draft up to 7 additional players of their choice.",
-    "Franchise owners will be recognized with honorary awards.",
-    "Franchise agreements are valid for 3 years, with ownership transfers requiring DPL board approval.",
-    "The DPL board holds authority to change rules and agreements.",
-    "Franchises must follow DPL policies for fair play and sportsmanship.",
+    "The DPL will have 16 franchises participating in the tournament.",
+    "All matches will be played under floodlights.",
+    "The tournament will follow a single-elimination knockout format in June 2025.",
+
+    // Team Composition & Player Regulations
+    "Each team must have at least 4 local players in the playing XI.",
+    "Teams must register their players before the tournament begins.",
+    "Players must meet the age and fitness criteria set by the organizers.",
+
+    // Match Rules
+    "All matches will be played in T10 format (10 overs per side).",
+
+    // Code of Conduct & Discipline
+    "All teams must follow DCC’s Code of Conduct for players and officials.",
+    "Any form of abuse, match-fixing, or cheating will result in immediate disqualification.",
+    "Umpire decisions are final and binding.",
+    "Players must adhere to the dress code and sponsorship obligations.",
+
+    // Disputes & Governance
+    "Any unforeseen disputes will be resolved by the DPL governing body.",
+    "The organizers hold the right to make changes to the rules if necessary.",
   ];
 
   return (
@@ -43,9 +57,7 @@ const RulesRegulations = () => {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
           >
-            <span className="text-blue-600 font-bold text-xl">
-              {index + 1}️⃣
-            </span>
+            <span className="text-blue-600 font-bold text-xl">{}️</span>
             <p className="text-gray-800">{rule}</p>
           </motion.div>
         ))}

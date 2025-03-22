@@ -1,8 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaUser, FaEnvelope, FaPhone, FaBirthdayCake } from "react-icons/fa";
+import {
+  FaUser,
+  FaMapMarkerAlt,
+  FaPhone,
+  FaBirthdayCake,
+  FaEnvelope,
+  FaRulerVertical,
+  FaWeight,
+  FaHashtag,
+} from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   registerUser,
   clearAllErrors,
@@ -11,47 +21,124 @@ import {
 
 const Registration = () => {
   const dispatch = useDispatch();
-  const { loading, error, message } = useSelector((state) => state.message);
 
+  // ✅ Redux state
+  const { loading, error, message } = useSelector((state) => state.register);
+
+  // ✅ Form Data State
   const [formData, setFormData] = useState({
-    name: "",
+    formNo: "",
+    fullName: "",
     email: "",
-    phone: "",
-    age: "",
-    role: "Batsman", // Ensuring correct initial state
+    address: "",
+    mobile: "",
+    dob: "",
+    height: "",
+    weight: "",
+    category: "Batsman",
+    hand: "Right",
+    bowlerType: "Fast",
+    fieldCategory: "General",
+    armCategory: "Right",
   });
 
+  // ✅ Handle Input Changes
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
+  // ✅ Form Validation
+  const validateForm = () => {
+    const { formNo, fullName, email, address, mobile, dob, height, weight } =
+      formData;
+
+    if (
+      !formNo ||
+      !fullName ||
+      !email ||
+      !address ||
+      !mobile ||
+      !dob ||
+      !height ||
+      !weight
+    ) {
+      toast.error("❌ Please fill in all required fields.");
+      return false;
+    }
+    return true;
+  };
+
+  // ✅ Handle Form Submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submitting Form Data:", formData); // Debugging role selection
+    if (!validateForm()) return;
+
+    const formattedDOB = new Date(formData.dob).toISOString();
+
+    // ✅ Prepare Form Data for Submission
+    const formDataToSend = {
+      ...formData,
+      dob: formattedDOB,
+      height: Number(formData.height),
+      weight: Number(formData.weight),
+    };
+
+    console.log("Submitting Form Data:", formDataToSend);
+
     if (!loading) {
-      dispatch(registerUser(formData));
+      dispatch(registerUser(formDataToSend));
     }
   };
 
+  // ✅ Handle Errors and Success Responses
   useEffect(() => {
     if (error) {
-      toast.error(error);
+      toast.error(`❌ ${error}`);
       dispatch(clearAllErrors());
     }
-    if (message) {
+
+    if (message && message.trim() !== "") {
+      toast.success(`✅ ${message}`);
       dispatch(resetRegisterState());
+
+      // ✅ Reset Form
       setFormData({
-        name: "",
+        formNo: "",
+        fullName: "",
         email: "",
-        phone: "",
-        age: "",
-        role: "Batsman", // Resetting role properly
+        address: "",
+        mobile: "",
+        dob: "",
+        height: "",
+        weight: "",
+        category: "Batsman",
+        hand: "Right",
+        bowlerType: "Fast",
+        fieldCategory: "General",
+        armCategory: "Right",
       });
     }
   }, [dispatch, error, message]);
 
+  // ✅ Render Form
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-700 to-purple-400 p-6">
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <motion.div
         className="bg-white p-10 rounded-xl shadow-2xl w-full max-w-lg"
         initial={{ opacity: 0, y: -30 }}
@@ -66,9 +153,12 @@ const Registration = () => {
         >
           DPL Player Registration
         </motion.h2>
+
         <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Form Fields */}
           {[
-            { name: "name", placeholder: "Full Name", icon: <FaUser /> },
+            { name: "formNo", placeholder: "Form Number", icon: <FaHashtag /> },
+            { name: "fullName", placeholder: "Full Name", icon: <FaUser /> },
             {
               name: "email",
               placeholder: "Email",
@@ -76,25 +166,38 @@ const Registration = () => {
               type: "email",
             },
             {
-              name: "phone",
-              placeholder: "Phone Number",
+              name: "address",
+              placeholder: "Address",
+              icon: <FaMapMarkerAlt />,
+            },
+            {
+              name: "mobile",
+              placeholder: "Mobile Number",
               icon: <FaPhone />,
               type: "tel",
             },
             {
-              name: "age",
-              placeholder: "Age",
+              name: "dob",
+              placeholder: "Date of Birth",
               icon: <FaBirthdayCake />,
+              type: "date",
+            },
+            {
+              name: "height",
+              placeholder: "Height (cm)",
+              icon: <FaRulerVertical />,
               type: "number",
-              min: 16,
+            },
+            {
+              name: "weight",
+              placeholder: "Weight (kg)",
+              icon: <FaWeight />,
+              type: "number",
             },
           ].map((field) => (
             <motion.div
               key={field.name}
               className="flex items-center border rounded-lg p-3 shadow-sm bg-gray-100"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
             >
               <span className="text-gray-500 mr-3">{field.icon}</span>
               <input
@@ -105,37 +208,85 @@ const Registration = () => {
                 onChange={handleChange}
                 className="w-full bg-transparent outline-none text-gray-700"
                 required
-                min={field.min || undefined}
               />
             </motion.div>
           ))}
 
-          {/* Fixed Dropdown for Player Role */}
-          <motion.div
-            className="flex items-center border rounded-lg p-3 shadow-sm bg-gray-100"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-          >
+          {/* Category Dropdown */}
+          <motion.div className="flex items-center border rounded-lg p-3 shadow-sm bg-gray-100">
             <select
-              name="role" // Fixed name attribute
-              value={formData.role} // Ensuring correct state variable
+              name="category"
+              value={formData.category}
               onChange={handleChange}
               className="w-full bg-transparent outline-none text-gray-700"
             >
               <option value="Batsman">Batsman</option>
               <option value="Bowler">Bowler</option>
               <option value="All-Rounder">All-Rounder</option>
-              <option value="Wicket-Keeper">Wicket-Keeper</option>
             </select>
           </motion.div>
 
+          {/* Field Category Dropdown */}
+          <motion.div className="flex items-center border rounded-lg p-3 shadow-sm bg-gray-100">
+            <select
+              name="fieldCategory"
+              value={formData.fieldCategory}
+              onChange={handleChange}
+              className="w-full bg-transparent outline-none text-gray-700"
+            >
+              <option value="General">General</option>
+              <option value="Wicket Keeper">Wicket Keeper</option>
+            </select>
+          </motion.div>
+
+          {/* Conditional Fields */}
+          {formData.category === "Batsman" && (
+            <motion.div className="flex items-center border rounded-lg p-3 shadow-sm bg-gray-100">
+              <select
+                name="hand"
+                value={formData.hand}
+                onChange={handleChange}
+                className="w-full bg-transparent outline-none text-gray-700"
+              >
+                <option value="Right">Right</option>
+                <option value="Left">Left</option>
+              </select>
+            </motion.div>
+          )}
+
+          {(formData.category === "Bowler" ||
+            formData.category === "All-Rounder") && (
+            <>
+              <motion.div className="flex items-center border rounded-lg p-3 shadow-sm bg-gray-100">
+                <select
+                  name="bowlerType"
+                  value={formData.bowlerType}
+                  onChange={handleChange}
+                  className="w-full bg-transparent outline-none text-gray-700"
+                >
+                  <option value="Fast">Fast</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Spinner">Spinner</option>
+                </select>
+              </motion.div>
+
+              <motion.div className="flex items-center border rounded-lg p-3 shadow-sm bg-gray-100">
+                <select
+                  name="armCategory"
+                  value={formData.armCategory}
+                  onChange={handleChange}
+                  className="w-full bg-transparent outline-none text-gray-700"
+                >
+                  <option value="Right">Right</option>
+                  <option value="Left">Left</option>
+                </select>
+              </motion.div>
+            </>
+          )}
+
           <motion.button
             type="submit"
-            className="w-full bg-indigo-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition duration-300 disabled:opacity-50"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            disabled={loading}
+            className="w-full bg-indigo-600 text-white py-3 rounded-lg text-lg font-semibold"
           >
             {loading ? "Registering..." : "Register"}
           </motion.button>

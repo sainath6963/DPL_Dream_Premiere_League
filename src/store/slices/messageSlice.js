@@ -1,13 +1,15 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API;
+
 // Async thunk for fetching all messages
 export const fetchMessages = createAsyncThunk(
   "messages/fetchMessages",
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        "https://dpl-backend-kuxw.onrender.com/api/v1/message/getAllMessage"
+        `${API_URL}/api/v1/message/getAllMessage`
       );
       return response.data;
     } catch (error) {
@@ -21,9 +23,7 @@ export const deleteMessage = createAsyncThunk(
   "messages/deleteMessage",
   async (id, { rejectWithValue }) => {
     try {
-      await axios.delete(
-        `https://dpl-backend-kuxw.onrender.com/api/v1/message/deleteMessage/${id}`
-      );
+      await axios.delete(`${API_URL}/api/v1/message/deleteMessage/${id}`);
       return id;
     } catch (error) {
       return rejectWithValue(error.response.data);

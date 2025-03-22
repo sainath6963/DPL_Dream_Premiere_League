@@ -9,15 +9,20 @@ import { Menu, X } from "lucide-react"; // Icons for menu toggle
 const AdminDashboard = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { message, error } = useSelector((state) => state.message);
+  const { message, error } = useSelector((state) => state.AllCricket);
   const [isOpen, setIsOpen] = useState(false); // Mobile sidebar state
+
+  // ✅ Redirect to Batman by default
+  useEffect(() => {
+    navigate("/admin/batman");
+  }, []);
 
   useEffect(() => {
     if (message) toast.success(message);
     if (error) toast.error(error);
   }, [message, error]);
 
-  // Handle Logout
+  // ✅ Handle Logout
   const handleLogout = () => {
     dispatch(resetRegisterState());
     toast.info("Logged out successfully!", { position: "bottom-right" });

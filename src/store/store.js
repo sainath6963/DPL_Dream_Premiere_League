@@ -5,7 +5,7 @@ import cricket from "../store/slices/messageSlice.js";
 
 export const store = configureStore({
   reducer: {
-    message: registerReducer,
+    register: registerReducer,
     AllCricket: cricket,
     auth: authReducer, // Handles authentication if needed
   },

@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "@/pages/HomePage.jsx";
 import Navbar from "./pages/sub-components/Navbar";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
+import.meta.env.VITE;
 
 import "./App.css";
 
@@ -26,6 +26,10 @@ import Batman from "./pages/sub-components/Batman";
 import Bawler from "./pages/sub-components/Bawler";
 import AllRounder from "./pages/sub-components/AllRounder";
 import WicketKeeper from "./pages/sub-components/WicketKeeper";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+console.log(import.meta.env.VITE_API); // ✅ Correct way in Vite
 
 const App = () => {
   useEffect(() => {
