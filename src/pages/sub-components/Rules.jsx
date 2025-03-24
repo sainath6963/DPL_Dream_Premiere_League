@@ -7,7 +7,7 @@ const RulesRegulations = () => {
     "The tournament will follow a single-elimination knockout format in June 2025.",
 
     // Team Composition & Player Regulations
-    "Each team must have at least 4 local players in the playing XI.",
+    "Each team must have at least 4 local players in the playing .",
     "Teams must register their players before the tournament begins.",
     "Players must meet the age and fitness criteria set by the organizers.",
 
@@ -23,6 +23,7 @@ const RulesRegulations = () => {
     // Disputes & Governance
     "Any unforeseen disputes will be resolved by the DPL governing body.",
     "The organizers hold the right to make changes to the rules if necessary.",
+    "Player Eligibility: Only players residing within a 10 km radius of Butibori are eligible to register. Proof of address may be required during registration.",
   ];
 
   return (

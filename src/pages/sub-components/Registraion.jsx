@@ -218,9 +218,7 @@ const Registration = () => {
 
           {/* Date Picker */}
           <motion.div className="flex items-center border rounded-lg p-3 shadow-sm bg-gray-100">
-            <span className="text-gray-500 mr-3">
-              <FaBirthdayCake />
-            </span>
+            <span className="text-gray-500 mr-3 font-bold">DOB</span>
             <DatePicker
               selected={formData.dob}
               onChange={handleDateChange}

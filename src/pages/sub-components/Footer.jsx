@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import logo from "../../photos/DPL.png";
 import {
@@ -96,7 +96,17 @@ const Footer = () => {
           </div>
           <div className="mt-4 text-gray-50">
             <div className="flex items-center gap-2">
-              <FaLocationArrow /> <span>Butibori, Nagpur</span>
+              <FaLocationArrow />{" "}
+              <Link
+                to={
+                  "https://www.google.com/maps/place/HBL+Tower/@20.9217839,79.0067145,17z/data=!4m6!3m5!1s0x3bd4981b59924013:0x9cced4458f759db8!8m2!3d20.9217839!4d79.0071381!16s%2Fg%2F11c6qc9qpb?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D"
+                }
+              >
+                <span className="hover:text-yellow-500">
+                  HBL Tower, Near RSG Town, Main Road, Butibori, Nagpur,
+                  Maharashtra – 441108
+                </span>
+              </Link>
             </div>
             <div className="flex items-center gap-2 mt-2">
               <FaMobileAlt /> <span>+91 8698108101</span>
