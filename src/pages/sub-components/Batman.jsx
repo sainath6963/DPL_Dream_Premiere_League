@@ -109,9 +109,7 @@ const Batsman = () => {
                     <h2 className="text-2xl font-bold text-green-400">
                       {batsman.fullName || "N/A"}
                     </h2>
-                    <p className="text-sm text-gray-400">
-                      📄 <strong>Form No:</strong> {batsman.formNo || "N/A"}
-                    </p>
+
                     <p className="text-sm text-gray-400">
                       📧 <strong>Email:</strong> {batsman.email || "N/A"}
                     </p>

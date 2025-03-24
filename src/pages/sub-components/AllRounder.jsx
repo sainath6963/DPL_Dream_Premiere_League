@@ -101,9 +101,7 @@ const AllRounder = () => {
                     <h2 className="text-2xl font-bold text-yellow-400">
                       {player.fullName}
                     </h2>
-                    <p className="text-sm text-gray-400 mt-2">
-                      <strong>Form No:</strong> {player.formNo}
-                    </p>
+
                     <p className="text-sm text-gray-400">
                       <strong>Email:</strong> {player.email}
                     </p>

@@ -112,9 +112,7 @@ const WicketKeeper = () => {
                     <h2 className="text-2xl font-bold text-yellow-400">
                       {keeper.fullName || "N/A"}
                     </h2>
-                    <p className="text-sm text-gray-400">
-                      <strong>Form No:</strong> {keeper.formNo || "N/A"}
-                    </p>
+
                     <p className="text-sm text-gray-400">
                       <strong>Email:</strong> {keeper.email || "N/A"}
                     </p>

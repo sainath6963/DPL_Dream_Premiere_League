@@ -4,11 +4,9 @@ import {
   FaUser,
   FaMapMarkerAlt,
   FaPhone,
-  FaBirthdayCake,
   FaEnvelope,
   FaRulerVertical,
   FaWeight,
-  FaHashtag,
 } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { toast, ToastContainer } from "react-toastify";
@@ -29,7 +27,6 @@ const Registration = () => {
 
   // ✅ Form Data State
   const [formData, setFormData] = useState({
-    formNo: "",
     fullName: "",
     email: "",
     address: "",
@@ -63,11 +60,9 @@ const Registration = () => {
 
   // ✅ Form Validation
   const validateForm = () => {
-    const { formNo, fullName, email, address, mobile, dob, height, weight } =
-      formData;
+    const { fullName, email, address, mobile, dob, height, weight } = formData;
 
     if (
-      !formNo ||
       !fullName ||
       !email ||
       !address ||
@@ -117,7 +112,6 @@ const Registration = () => {
 
       // ✅ Reset Form
       setFormData({
-        formNo: "",
         fullName: "",
         email: "",
         address: "",

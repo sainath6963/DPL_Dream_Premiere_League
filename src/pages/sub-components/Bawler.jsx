@@ -109,9 +109,7 @@ const Bowler = () => {
                     <h2 className="text-2xl font-bold text-blue-400">
                       {bowler.fullName || "N/A"}
                     </h2>
-                    <p className="text-sm text-gray-400">
-                      📄 <strong>Form No:</strong> {bowler.formNo || "N/A"}
-                    </p>
+
                     <p className="text-sm text-gray-400">
                       📧 <strong>Email:</strong> {bowler.email || "N/A"}
                     </p>
