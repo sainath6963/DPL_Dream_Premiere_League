@@ -167,7 +167,6 @@ const Registration = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Form Fields */}
           {[
-            { name: "formNo", placeholder: "Form Number", icon: <FaHashtag /> },
             { name: "fullName", placeholder: "Full Name", icon: <FaUser /> },
             {
               name: "email",
