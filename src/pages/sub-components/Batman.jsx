@@ -114,6 +114,10 @@ const Batsman = () => {
                       📧 <strong>Email:</strong> {batsman.email || "N/A"}
                     </p>
                     <p className="text-sm text-gray-400">
+                      📧 <strong>Adhar Number:</strong>{" "}
+                      {batsman.adharNo || "N/A"}
+                    </p>
+                    <p className="text-sm text-gray-400">
                       🏠 <strong>Address:</strong> {batsman.address || "N/A"}
                     </p>
                     <p className="text-sm text-gray-400">

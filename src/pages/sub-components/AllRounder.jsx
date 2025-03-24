@@ -106,6 +106,9 @@ const AllRounder = () => {
                       <strong>Email:</strong> {player.email}
                     </p>
                     <p className="text-sm text-gray-400">
+                      <strong>Adhar Number:</strong> {player.adharNo}
+                    </p>
+                    <p className="text-sm text-gray-400">
                       <strong>Mobile:</strong> {player.mobile}
                     </p>
                     <p className="text-sm text-gray-400">

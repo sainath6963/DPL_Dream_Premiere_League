@@ -7,6 +7,7 @@ import {
   FaEnvelope,
   FaRulerVertical,
   FaWeight,
+  FaIdCard, // Import ID Card Icon
 } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { toast, ToastContainer } from "react-toastify";
@@ -39,6 +40,7 @@ const Registration = () => {
     bowlerType: "Fast",
     fieldCategory: "General",
     armCategory: "Right",
+    adharNo: "", // Add adharNo field
   });
 
   // ✅ Handle Input Changes
@@ -60,7 +62,8 @@ const Registration = () => {
 
   // ✅ Form Validation
   const validateForm = () => {
-    const { fullName, email, address, mobile, dob, height, weight } = formData;
+    const { fullName, email, address, mobile, dob, height, weight, adharNo } =
+      formData;
 
     if (
       !fullName ||
@@ -69,7 +72,8 @@ const Registration = () => {
       !mobile ||
       !dob ||
       !height ||
-      !weight
+      !weight ||
+      !adharNo
     ) {
       toast.error("❌ Please fill in all required fields.");
       return false;
@@ -124,6 +128,7 @@ const Registration = () => {
         bowlerType: "Fast",
         fieldCategory: "General",
         armCategory: "Right",
+        adharNo: "",
       });
     }
   }, [dispatch, error, message]);
@@ -190,6 +195,12 @@ const Registration = () => {
               placeholder: "Weight (kg)",
               icon: <FaWeight />,
               type: "number",
+            },
+            {
+              name: "adharNo",
+              placeholder: "Adhar Number",
+              icon: <FaIdCard />,
+              type: "text",
             },
           ].map((field) => (
             <motion.div

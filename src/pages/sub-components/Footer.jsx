@@ -96,15 +96,25 @@ const Footer = () => {
           </div>
           <div className="mt-4 text-gray-50">
             <div className="flex items-center gap-2">
-              <FaLocationArrow />{" "}
+              <FaLocationArrow className="text-6xl text-gray-700" />{" "}
               <Link
                 to={
                   "https://www.google.com/maps/place/HBL+Tower/@20.9217839,79.0067145,17z/data=!4m6!3m5!1s0x3bd4981b59924013:0x9cced4458f759db8!8m2!3d20.9217839!4d79.0071381!16s%2Fg%2F11c6qc9qpb?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D"
                 }
               >
                 <span className="hover:text-yellow-500">
-                  HBL Tower, Near RSG Town, Main Road, Butibori, Nagpur,
-                  Maharashtra – 441108
+                  HBL Tower Main Road, Butibori, Nagpur, Maharashtra – 441108
+                </span>
+              </Link>
+              <FaLocationArrow className="text-6xl text-gray-700" />{" "}
+              <Link
+                to={
+                  "https://www.google.com/maps/place/Ghatate+Chambers+Building/@21.1388414,79.0764918,17z/data=!4m14!1m7!3m6!1s0x3bd4c093d6c05819:0x5289cd80b06abbae!2sGhatate+Chambers+Building!8m2!3d21.1388364!4d79.0790721!16s%2Fg%2F11gfnddgdb!3m5!1s0x3bd4c093d6c05819:0x5289cd80b06abbae!8m2!3d21.1388364!4d79.0790721!16s%2Fg%2F11gfnddgdb?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D"
+                }
+              >
+                <span className="hover:text-yellow-500">
+                  2nd Floor, Ghatate Chamber, Panchshil Chowk, Nagpur,
+                  Maharashtra, India
                 </span>
               </Link>
             </div>

@@ -117,6 +117,9 @@ const WicketKeeper = () => {
                       <strong>Email:</strong> {keeper.email || "N/A"}
                     </p>
                     <p className="text-sm text-gray-400">
+                      <strong>Adhar Number:</strong> {keeper.adharNo || "N/A"}
+                    </p>
+                    <p className="text-sm text-gray-400">
                       <strong>Phone:</strong> {keeper.mobile || "N/A"}
                     </p>
                     <p className="text-sm text-gray-400">

@@ -114,6 +114,10 @@ const Bowler = () => {
                       📧 <strong>Email:</strong> {bowler.email || "N/A"}
                     </p>
                     <p className="text-sm text-gray-400">
+                      📧 <strong>Adhar Number:</strong>{" "}
+                      {bowler.adharNo || "N/A"}
+                    </p>
+                    <p className="text-sm text-gray-400">
                       📱 <strong>Mobile:</strong> {bowler.mobile || "N/A"}
                     </p>
                     <p className="text-sm text-gray-400">
