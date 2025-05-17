@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import image1 from "../../photos/imge1.jpg";
+import image1 from "../../photos/";
 import image2 from "../../photos/imge2.jpg";
 import image3 from "../../photos/imge3.jpg";
 import image4 from "../../photos/imge4.jpg";
