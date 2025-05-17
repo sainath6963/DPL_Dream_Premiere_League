@@ -89,6 +89,14 @@ const AdminDashboard = () => {
                 </Link>
               </li>
               <li>
+                <Link
+                  to="upload-videos"
+                  className="block px-4 py-2 bg-yellow-500 rounded-md hover:bg-yellow-600 transition duration-300"
+                >
+                  Upload Videos
+                </Link>
+              </li>
+              <li>
                 <button
                   onClick={handleLogout}
                   className="w-full text-left px-4 py-2 bg-red-600 rounded-md hover:bg-red-700 transition duration-300"

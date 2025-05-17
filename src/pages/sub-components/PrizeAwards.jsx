@@ -26,7 +26,7 @@ const PrizeAwards = () => {
         {[
           {
             title: "Winner’s Prize",
-            amount: "₹ more than 2 lakh",
+            amount: "₹3 lakh",
             emoji: "🏅",
           },
           { title: "Runner-up Prize", amount: "₹ 150000", emoji: "🥈" },

@@ -28,6 +28,7 @@ import AllRounder from "./pages/sub-components/AllRounder";
 import WicketKeeper from "./pages/sub-components/WicketKeeper";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import UploadVideos from "./pages/sub-components/UploadVideos";
 
 console.log(import.meta.env.VITE_API); // ✅ Correct way in Vite
 
@@ -63,6 +64,7 @@ const App = () => {
           <Route path="balwer" element={<Bawler />} />
           <Route path="AllRounder" element={<AllRounder />} />
           <Route path="Wicket-Keeper" element={<WicketKeeper />} />
+          <Route path="upload-videos" element={<UploadVideos />} />
         </Route>
       </Routes>
 
