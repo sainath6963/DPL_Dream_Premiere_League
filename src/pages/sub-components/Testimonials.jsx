@@ -5,42 +5,119 @@ import "slick-carousel/slick/slick-theme.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import image1 from "../../photos/";
-import image2 from "../../photos/imge2.jpg";
-import image3 from "../../photos/imge3.jpg";
-import image4 from "../../photos/imge4.jpg";
-import image5 from "../../photos/imge5.jpg";
+import image1 from "../../photos/img1.png";
+import image2 from "../../photos/img2.png";
+import image3 from "../../photos/img3.png";
+import image4 from "../../photos/img4.png";
+import image5 from "../../photos/img5.jpeg";
+import image6 from "../../photos/img6.png";
+import image7 from "../../photos/img7.png";
+import image8 from "../../photos/img8.png";
+import image9 from "../../photos/img9.png";
+import image10 from "../../photos/img10.png";
+import image11 from "../../photos/img11.png";
+import image12 from "../../photos/img12.png";
+import image13 from "../../photos/img13.png";
+import image14 from "../../photos/img14.png";
+import image15 from "../../photos/img15.png";
+import image16 from "../../photos/img16.png";
 
 const TestimonialData = [
   {
     id: 1,
-    name: "Ankit Sharma – Registered Player (Boys' Team)",
-    text: "I’m excited to be part of the upcoming Dream Premier League! It’s a fantastic platform to showcase our cricketing skills.",
+    name: "DINSHAW'S DAIRY FOODS PVT LTD",
+    text: "Dinshaw's thunderbolts represents Power, precision and legacy. This team stands tall with a blend of experience an explosive young talent. the thunderbolts aim to strike fast and hard - like thunder on the cricket field.",
     img: image1,
   },
   {
     id: 2,
-    name: "Rahul Verma ",
-    text: "Our team is training hard for the upcoming league. This tournament will be a great opportunity for the boys to showcase their talent and gain valuable experience. Looking forward to some thrilling matches!",
+    name: " BMA GROUPS, BUTIBORI",
+    text: "BMA Legends stands for legacy, discipline and champion sprite.The team carries a nice tradition of excellence.The legends are built to inspire and lead - both on and off the pitch. ",
     img: image2,
   },
   {
     id: 3,
-    name: "Rohit Kale – Volunteer & Cricket Enthusiast",
-    text: "Volunteering at the Dream Premier League was an amazing experience. The organizers ensured smooth execution, and the enthusiasm of the players made it memorable,",
+    name: "Tech Warriors GPGI-GAIKWAD PATIL GROUP OF INSTITUTIONS",
+    text: "Tech Warriors GPGI represents the fusion of education, energy and excellence.They stand for smart strategy, youth power and visionary leadership. The team reflects the institute's commitment to holistic development - on and off the field",
     img: image3,
   },
   {
     id: 4,
-    name: "Sahil Patil – Registered Player",
-    text: "Can’t wait to be part of the Dream Premier League! It’s going to be an incredible experience competing with skilled players and making unforgettable memories on the field. Let the game begin!",
+    name: "Dr.Chaudhari Warriors -DR. RAMAN CHAUDHARI  ",
+    text: "Dr.Chaudhari Warriors symbolize discipline, determination and dominance.This team stands for fearless cricket and intellectual strategy. The warriors are here to fight every ba battle with integrity and inspire a generation of cricketers.",
     img: image4,
   },
   {
     id: 5,
-    name: "Aman Deshmukh – Parent",
-    text: "I’m looking forward to watching my son compete in this prestigious tournament. It’s a fantastic platform for young cricketers to showcase their potential and grow as players. Best of luck to all the teams!",
+    name: "Maya Saviours XI -DR. SHYAM DEOTALE ",
+    text: "Maya Saviours XI draws inspiration from the life-saving spirit of Maya hospital.This team represents courage, care and commitment.The Saviours combine heart, strategy and grit to tall under pressure",
     img: image5,
+  },
+  {
+    id: 6,
+    name: "Morarji Panthers -MORARJI TEXTILES LTD. ",
+    text: "Morarji Panthers reflect strength, speed and resilience - just like the majestic panther.The team blends tactical aggression with focused discipline. The panthers are driven by ambition and unity",
+    img: image6,
+  },
+  {
+    id: 7,
+    name: "PATANJALI FOODS PVT. LTD.",
+    text: "Patanjali Divyashakti represents discipline, power and purity, backed by the legacy of patanjali, Patanjali Divyashakti have a perfect blend of youth energy and experienced minds",
+    img: image7,
+  },
+  {
+    id: 8,
+    name: " ZFM XI - MR. IMRAN KHAN ",
+    text: "ZFM XI represent power, precision, and professionalism. This team mirrors the strength and efficiency of the industrial world. ZFM XI is ready to clean up the compitition in style.",
+    img: image8,
+  },
+  {
+    id: 9,
+    name: "SAVITEK INDIANS",
+    text: "Savitek blazers ignite the field with energy, strategy and speed.This team symbolizes rising network and blazing trails.The blazers are set to set the DPL stage on fire!",
+    img: image9,
+  },
+  {
+    id: 10,
+    name: "ENGLISH SCHOOL ASSOCIATION - ESA",
+    text: "ESA Strikers represent Energy, Education and execution.This team blends academic discipline with athletic aggression.The strikers showcase smartness, sharpness and swiftness.",
+    img: image10,
+  },
+  {
+    id: 11,
+    name: "Mayur Ranger 11-MAYUR HOTEL GROUP ",
+    text: "Mayur Ranger 11 represents precision, class and consistency. This team brings discipline from hospitality to the cricket field. The Rangers are here to dominate the league with grace and grit.",
+    img: image11,
+  },
+  {
+    id: 12,
+    name: "Arjun 11 BUTIBORI - BUTIBORI CRICKET DEVELOPMENT FORUM",
+    text: "Arjun Butibori 11 draws its name and spirit from the legendary archer Arjuna, symbolizing focus, determination, and precision — with sharp strategy and fearless execution.",
+    img: image12,
+  },
+  {
+    id: 13,
+    name: "ETU Challenger- Mr. Yogesh Satpute",
+    text: "ETU Challengers embody the true spirit of rural determination and fearless ambition.This team is all about rising against odds.They challenge every limit and play with unmatched intensity and pride.",
+    img: image13,
+  },
+  {
+    id: 14,
+    name: "SKY TITANS - MR. SHAKIL KHAN",
+    text: "Sky Titans represent limitless ambition and towering strength. This team have a vision to dominate from the skies, this team combines power-hitters, sharp bowlers, and strategic minds.They are here to conquer the cricketing skies of DPL.",
+    img: image14,
+  },
+  {
+    id: 15,
+    name: "TAJ ROYALS - MR.ASIF PATEL",
+    text: "Taj Royal embodies elegance, heritage, dominance.This team reflects royal composure mixed with commutative fire.Taj Royal are ready to rule the game with regal flair and spoting brilliance.",
+    img: image15,
+  },
+  {
+    id: 16,
+    name: "Golden City Lions -GOLDEN GROUP, BUTIBORI ",
+    text: "Golden City Lions represent courage, class and commitment. This team mirrors the golden heritage and ambition of it's community. The lions are ready to dominate every innings with power and pride",
+    img: image16,
   },
 ];
 
@@ -55,9 +132,9 @@ const Testimonials = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 5000,
     cssEase: "ease-in-out",
     pauseOnHover: true,
     pauseOnFocus: true,
@@ -83,16 +160,21 @@ const Testimonials = () => {
         <div className="text-center mb-12">
           <h2
             data-aos="fade-down"
-            className="text-3xl font-extrabold text-gray-800 mb-2"
+            className="text-4xl font-extrabold text-gray-800 mb-2"
           >
-            What Our Players Say
+            Our Frenchies Team Owners
           </h2>
           <p
             data-aos="fade-up"
-            className="text-gray-500 text-sm md:text-base max-w-2xl mx-auto"
+            className="text-gray-500 text-lg font-medium md:text-base max-w-2xl mx-auto"
           >
-            Hear from our passionate players about their experiences and
-            excitement for the Dream Premier League.
+            Meet the passionate minds behind the Frenchies cricket teams — the
+            owners who bring vision, energy, and a deep love for the game. They
+            are the backbone of our squads, playing a vital role in team
+            building, strategy, and creating a winning culture both on and off
+            the field. With a shared commitment to sportsmanship, talent
+            development, and the spirit of cricket, our team owners ensure the
+            Frenchies legacy continues to grow stronger with every match.
           </p>
         </div>
 
@@ -103,13 +185,8 @@ const Testimonials = () => {
                 <div className="bg-white rounded-2xl shadow-lg p-8 relative hover:shadow-2xl transition-shadow duration-300">
                   <div className="mb-6 flex justify-center">
                     {/* Add a placeholder or default avatar */}
-                    <div className="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center">
-                      {}{" "}
-                      <img
-                        src={data.img}
-                        alt=""
-                        className="rounded-full w-20 h-20"
-                      />
+                    <div className="w-60 h-60 rounded-full bg-gray-200 flex items-center justify-center">
+                      {} <img src={data.img} alt="" className=" w-40 h-40" />
                     </div>
                   </div>
                   <div className="text-center">

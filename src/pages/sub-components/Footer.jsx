@@ -131,8 +131,7 @@ const Footer = () => {
         transition={{ duration: 1 }}
         className="text-center text-gray-50 text-sm mt-8"
       >
-        © {new Date().getFullYear()} DPL Cricket Tournament & SB9Codes Pvt Ltd.
-        All rights reserved.
+        © {new Date().getFullYear()} DPL Cricket Tournament All rights reserved.
       </motion.div>
     </footer>
   );
