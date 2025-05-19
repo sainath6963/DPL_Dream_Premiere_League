@@ -29,6 +29,10 @@ import WicketKeeper from "./pages/sub-components/WicketKeeper";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import UploadVideos from "./pages/sub-components/UploadVideos";
+import Videos from "./pages/Videos";
+import VideoManager from "./pages/VidioManager";
+import ManagementTeam from "./pages/sub-components/ManagementTeam";
+import WatchVideos from "./pages/sub-components/WatchVideos";
 
 console.log(import.meta.env.VITE_API); // ✅ Correct way in Vite
 
@@ -56,6 +60,9 @@ const App = () => {
         <Route path="/registration" element={<Registration />} />
         <Route path="/rules" element={<Rule />} />
         <Route path="/prize-money" element={<PrizeAwards />} />
+        <Route path="/videos" element={<Videos />} />
+        <Route path="/teamManagement" element={<ManagementTeam />} />
+        <Route path="/watchVideos" element={<WatchVideos />} />
 
         {/* Admin Routes */}
         <Route path="/admin/login" element={<AdminLogin />} />
@@ -65,6 +72,7 @@ const App = () => {
           <Route path="AllRounder" element={<AllRounder />} />
           <Route path="Wicket-Keeper" element={<WicketKeeper />} />
           <Route path="upload-videos" element={<UploadVideos />} />
+          <Route path="videosManager" element={<VideoManager />} />
         </Route>
       </Routes>
 

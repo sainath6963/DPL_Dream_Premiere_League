@@ -4,13 +4,15 @@ import logo from "../../photos/DPL.png";
 
 const Menu = [
   { id: 1, name: "Home", link: "/" },
-  { id: 2, name: "About Us", link: "/about_us" },
+  { id: 2, name: "About Us", link: "/teamManagement" },
   { id: 3, name: "Venue", link: "/venue" },
+  { id: 3, name: "Videos", link: "/watchVideos" },
 ];
 
 const DropDownLinks = [
   { id: 1, name: "Rules And Regulations", link: "/Rules" },
   { id: 2, name: "Prizes", link: "/prize-money" },
+  { id: 3, name: "blogs", link: "/about_us" },
   { id: 4, name: "Register", link: "/registration" },
 ];
 

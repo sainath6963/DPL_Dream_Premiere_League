@@ -20,6 +20,8 @@ import AboutUS from "./sub-components/AboutUS.jsx";
 import Venue from "./sub-components/Venue.jsx";
 import Rules from "../pages/sub-components/Rules.jsx";
 import PrizeAward from "../pages/sub-components/PrizeAwards.jsx";
+import ManagementTeam from "./sub-components/ManagementTeam.jsx";
+import WatchVideos from "./sub-components/WatchVideos.jsx";
 
 function HomePage() {
   const [active, setActive] = useState("Dashboard");
@@ -66,6 +68,18 @@ function HomePage() {
                 >
                   <FolderGit className="h-5 w-5" />
                   About Us
+                </Link>
+                <Link
+                  href="#"
+                  className={`flex items-center gap-4 px-2.5 ${
+                    active === "Venue"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  } `}
+                  onClick={() => setActive("Videos")}
+                >
+                  <PencilRuler className="h-5 w-5" />
+                  Videos
                 </Link>
                 <Link
                   href="#"
@@ -126,7 +140,10 @@ function HomePage() {
               return <Dashboard />;
               break;
             case "About_Us":
-              return <AboutUS />;
+              return <ManagementTeam />;
+              break;
+            case "Videos":
+              return <WatchVideos />;
               break;
             case "Venue":
               return <Venue />;

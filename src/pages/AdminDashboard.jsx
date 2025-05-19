@@ -90,10 +90,10 @@ const AdminDashboard = () => {
               </li>
               <li>
                 <Link
-                  to="upload-videos"
+                  to="videosManager"
                   className="block px-4 py-2 bg-yellow-500 rounded-md hover:bg-yellow-600 transition duration-300"
                 >
-                  Upload Videos
+                  Videos Manager
                 </Link>
               </li>
               <li>
