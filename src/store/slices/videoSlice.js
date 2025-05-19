@@ -7,10 +7,12 @@ const initialState = {
   loading: false,
   error: null,
 };
+const api = import.meta.env.VITE_API;
 
 // Async thunk: Fetch videos
 export const fetchVideos = createAsyncThunk("videos/fetchVideos", async () => {
-  const response = await axios.get("http://localhost:4000/api/v1/video");
+  const response = await axios.get(`${api}/api/v1/video`);
+  console.log("vite api now only print", api);
 
   // If the backend sends { videos: [...] }, return only the array
   if (Array.isArray(response.data)) {
@@ -27,7 +29,7 @@ export const uploadVideo = createAsyncThunk(
   "videos/uploadVideo",
   async (formData) => {
     const response = await axios.post(
-      "http://localhost:4000/api/v1/video/upload/hls",
+      `${api}/api/v1/video/upload/hls`,
       formData,
       {
         headers: {
@@ -44,7 +46,7 @@ export const uploadVideo = createAsyncThunk(
 export const deleteVideo = createAsyncThunk(
   "videos/deleteVideo",
   async (videoId) => {
-    await axios.delete(`http://localhost:4000/api/v1/video/${videoId}`);
+    await axios.delete(`${api}/api/v1/video/${videoId}`);
     return videoId; // Return the deleted video's ID
   }
 );
