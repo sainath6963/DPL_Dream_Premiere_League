@@ -5,6 +5,7 @@ import {
   MessageSquareMore,
   Package2,
   PencilRuler,
+  Video,
 } from "lucide-react";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -22,6 +23,7 @@ import Rules from "../pages/sub-components/Rules.jsx";
 import PrizeAward from "../pages/sub-components/PrizeAwards.jsx";
 import ManagementTeam from "./sub-components/ManagementTeam.jsx";
 import WatchVideos from "./sub-components/WatchVideos.jsx";
+import { FaBlog } from "react-icons/fa";
 
 function HomePage() {
   const [active, setActive] = useState("Dashboard");
@@ -78,7 +80,7 @@ function HomePage() {
                   } `}
                   onClick={() => setActive("Videos")}
                 >
-                  <PencilRuler className="h-5 w-5" />
+                  <Video className="h-5 w-5" />
                   Videos
                 </Link>
                 <Link
@@ -117,6 +119,18 @@ function HomePage() {
                   <FolderGit className="h-5 w-5" />
                   Prizes
                 </Link>
+                <Link
+                  href="#"
+                  className={`flex items-center gap-4 px-2.5 ${
+                    active === "AddProject"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  } `}
+                  onClick={() => setActive("blogs")}
+                >
+                  <FaBlog className="h-5 w-5" />
+                  blogs
+                </Link>
 
                 <Link
                   href="#"
@@ -147,6 +161,9 @@ function HomePage() {
               break;
             case "Venue":
               return <Venue />;
+              break;
+            case "blogs":
+              return <AboutUS />;
               break;
             case "Rules & Regulations":
               return <Rules />;
