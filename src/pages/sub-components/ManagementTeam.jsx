@@ -1,5 +1,5 @@
 import React from "react";
-import model from "@/photos/MainModel.jpg";
+import model from "@/photos/heroPhoto.jpg";
 
 const ManagementTeam = () => {
   return (
@@ -26,7 +26,7 @@ const ManagementTeam = () => {
           tracking-wide drop-shadow-md"
         >
           Mujib Pathan <br />
-          Found & MD, Dream Group of Schools & Dream Developers
+          Found & MD, Dream Group of Schools & Dream Developers & Builders
         </p>
 
         <div className="space-y-4 text-justify text-lg leading-relaxed text-gray-700">
