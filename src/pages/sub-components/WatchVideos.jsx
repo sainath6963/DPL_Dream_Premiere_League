@@ -83,10 +83,12 @@ const WatchVideos = () => {
         }}
       >
         {uploadedVideos.map((video, index) => {
-          const folderId = video?.path?.split("\\").slice(-2, -1)[0];
-          const BASE_URL = import.meta.env.VITE_API;
+          const folderId =
+            actualVideo?.path?.split("/")?.slice(-2, -1)?.[0] ?? null;
+
+          const BASE_URL = import.meta.env.VITE_API; // e.g. http://localhost:5000 (already has protocol)
           const videoSrc = folderId
-            ? `https://${BASE_URL}/uploads/hls/${folderId}/index.m3u8`
+            ? `${BASE_URL}/uploads/hls/${folderId}/index.m3u8`
             : null;
 
           return (
