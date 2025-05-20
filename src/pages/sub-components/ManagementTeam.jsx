@@ -1,5 +1,5 @@
 import React from "react";
-import model from "@/photos/heroPhoto.jpg";
+import modelphoto from "@/photos/heroPhoto.jpg";
 
 const ManagementTeam = () => {
   return (
@@ -9,7 +9,7 @@ const ManagementTeam = () => {
     >
       {/* Image */}
       <img
-        src={model}
+        src={modelphoto}
         alt="Mr. Mujib Pathan"
         className="w-full h-[500px] md:col-span-1 rounded-xl object-cover
           transform transition-transform duration-500 hover:scale-105 shadow-md"
