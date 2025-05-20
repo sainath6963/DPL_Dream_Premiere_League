@@ -146,9 +146,9 @@ const VideoManager = () => {
             const actualVideo = video || {};
             const folderId =
               actualVideo?.path?.split("\\")?.slice(-2, -1)?.[0] ?? null;
-            const BASE_URL = import.meta.env.VITE_API;
+            const BASE_URL = import.meta.env.VITE_API; // e.g. http://localhost:5000 (already has protocol)
             const videoSrc = folderId
-              ? `https://${BASE_URL}/uploads/hls/${folderId}/index.m3u8`
+              ? `${BASE_URL}/videos/${folderId}/index.m3u8`
               : null;
 
             return (
