@@ -1,5 +1,5 @@
 import React from "react";
-import modelphoto from "@/photos/websitephoto.jpg";
+import modelphoto from "@/photos/websitephoto.JPG";
 
 const ManagementTeam = () => {
   return (
