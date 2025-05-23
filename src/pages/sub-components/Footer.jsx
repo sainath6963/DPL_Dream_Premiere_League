@@ -10,12 +10,14 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import Banner from "../../photos/footer3.jpg";
+import { MdEmail, MdReportGmailerrorred } from "react-icons/md";
 
 const FooterLinks = [
   { title: "Home", link: "/" },
   { title: "About", link: "/about_us" },
   { title: "Venue", link: "/venue" },
   { title: "Register", link: "/registration" },
+  { title: "videos", link: "/watchVideos" },
 ];
 
 const Footer = () => {
@@ -120,6 +122,9 @@ const Footer = () => {
             </div>
             <div className="flex items-center gap-2 mt-2">
               <FaMobileAlt /> <span>+91 8698108101</span>
+            </div>
+            <div className="flex items-center gap-2 mt-2">
+              <MdEmail /> <span>dplbutibori@gmail.com</span>
             </div>
           </div>
         </motion.div>
