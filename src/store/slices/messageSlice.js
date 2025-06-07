@@ -14,6 +14,7 @@ export const fetchMessages = createAsyncThunk(
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
+      console.log("hii");
     }
   }
 );
